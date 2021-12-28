@@ -1,0 +1,24 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-pi
+spec:
+  hosts:
+  - role: controller+worker
+    os: debian
+    ssh:
+      address: 192.168.10.51
+      user: pi
+      keyPath: ~/.ssh/id_rsa
+  - role: worker
+    os: debian
+    ssh:
+      address: 192.168.10.52
+      user: pi
+      keyPath: ~/.ssh/id_rsa
+  - role: worker
+    os: debian
+    ssh:
+      address: 192.168.10.53
+      user: pi
+      keyPath: ~/.ssh/id_rsa
