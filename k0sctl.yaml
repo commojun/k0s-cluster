@@ -3,22 +3,24 @@ kind: Cluster
 metadata:
   name: k0s-pi
 spec:
+  k0s:
+    version: v1.23.6+k0s.1
   hosts:
-  - role: controller+worker
+  - role: controller
     os: debian
     ssh:
-      address: 192.168.10.51
+      address: pi51.local
       user: pi
       keyPath: ~/.ssh/id_rsa
   - role: worker
     os: debian
     ssh:
-      address: 192.168.10.52
+      address: pi52.local
       user: pi
       keyPath: ~/.ssh/id_rsa
   - role: worker
     os: debian
     ssh:
-      address: 192.168.10.53
+      address: pi53.local
       user: pi
       keyPath: ~/.ssh/id_rsa
