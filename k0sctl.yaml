@@ -6,21 +6,27 @@ spec:
   k0s:
     version: v1.23.6+k0s.1
   hosts:
-  - role: controller
+  - role: controller+worker
     os: debian
     ssh:
-      address: pi51.local
-      user: pi
+      address: pi41.local
+      user: commojun
       keyPath: ~/.ssh/id_rsa
   - role: worker
     os: debian
     ssh:
-      address: pi52.local
-      user: pi
+      address: pi31.local
+      user: commojun
       keyPath: ~/.ssh/id_rsa
   - role: worker
     os: debian
     ssh:
-      address: pi53.local
-      user: pi
+      address: pi32.local
+      user: commojun
+      keyPath: ~/.ssh/id_rsa
+  - role: worker
+    os: debian
+    ssh:
+      address: pi33.local
+      user: commojun
       keyPath: ~/.ssh/id_rsa
