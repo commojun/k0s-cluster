@@ -4,7 +4,7 @@ metadata:
   name: k0s-pi
 spec:
   k0s:
-    version: v1.23.6+k0s.1
+    version: v1.24.9+k0s.0
   hosts:
   - role: controller+worker
     os: debian
