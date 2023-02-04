@@ -9,8 +9,8 @@ spec:
     app: nginx
   ports:
   - name: http
-    nodePort: 36666 # 外部に公開するポート
-    port: 36666     # クラスタ内部で通信するポート
+    nodePort: 32000 # 外部に公開するポート
+    port: 32000     # クラスタ内部で通信するポート
     targetPort: 80  # コンテナが利用するポート
 
 ---
