@@ -8,6 +8,7 @@ spec:
   hosts:
   - role: controller+worker
     os: debian
+    noTaints: false
     ssh:
       address: pi41.local
       user: commojun
