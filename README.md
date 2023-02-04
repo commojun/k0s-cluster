@@ -20,6 +20,16 @@ spec.k0s.version に記載するバージョンを[k0sのリリースページ](
 
 k0sctl.ymlにノード構成を記載する
 
+#### taintsについて
+
+worker+controllerに設定したノードは、デフォルトだとPodをスケジュールしないような設定になっているらしい。それを防ぐためには明示的に `noTaints` という要素を `false` にする必要があるっぽい？（その設定でうまくクラスタ構築できたわけではない）
+
+参考: https://github.com/k0sproject/k0sctl#spechostsnotaints-boolean-optional-default-false
+
+手動でtaintsの設定を変更する場合はこの記事が参考になった
+
+https://qiita.com/nykym/items/dcc572c21885543d94c8
+
 ### 4, ノード側の準備
 
 - cgroupを有効にする ([参考](https://zenn.dev/link/comments/18ff5c881781be))
