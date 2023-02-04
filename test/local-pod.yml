@@ -9,9 +9,9 @@ spec:
     app: nginx
   ports:
   - name: http
-    port: 36666
-    targetPort: 36666
-    nodePort: 80
+    nodePort: 36666 # 外部に公開するポート
+    port: 36666     # クラスタ内部で通信するポート
+    targetPort: 80  # コンテナが利用するポート
 
 ---
 
@@ -29,6 +29,8 @@ spec:
     volumeMounts:
     - mountPath: /usr/share/nginx/html
       name: my-volume
+    ports:
+    - containerPort: 80
   volumes:
   - name: my-volume
     persistentVolumeClaim:
