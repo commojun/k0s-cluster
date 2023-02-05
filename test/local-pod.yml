@@ -10,7 +10,7 @@ spec:
   ports:
   - name: http
     nodePort: 32000 # 外部に公開するポート
-    port: 8080     # クラスタ内部で通信するポート
+    port: 8080      # クラスタ内部で通信するポート
     targetPort: 80  # コンテナが利用するポート
 
 ---
