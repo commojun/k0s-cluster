@@ -23,6 +23,15 @@ metadata:
   labels:
     app: nginx-nfs
 spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: NotIn
+            values:
+              - pi41
   containers:
   - name: nginx
     image: nginx
