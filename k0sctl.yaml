@@ -4,7 +4,17 @@ metadata:
   name: k0s-pi
 spec:
   k0s:
-    version: v1.24.9+k0s.0
+    version: v1.26.1+k0s.0
+    dynamicConfig: true
+    config:
+      apiVersion: k0s.k0sproject.io/v1beta1
+      kind: ClusterConfig
+      spec:
+        workerProfiles:
+        - name: swap-enable
+          values:
+            memorySwap:
+              swapBehavior: "LimitedSwap"
   hosts:
   - role: controller+worker
     os: debian
