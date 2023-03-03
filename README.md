@@ -30,6 +30,8 @@ worker+controllerに設定したノードは、デフォルトだとPodをスケ
 
 https://qiita.com/nykym/items/dcc572c21885543d94c8
 
+※コントローラノードの負荷が高まるとほとんど何もできなくなってあまり良いことがなかったので、結局この設定はもとに戻した。
+
 ### 4, ノード側の準備
 
 - cgroupを有効にする ([参考](https://zenn.dev/link/comments/18ff5c881781be))
