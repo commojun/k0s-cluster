@@ -13,8 +13,8 @@ spec:
         workerProfiles:
         - name: swap-enable
           values:
-            memorySwap:
-              swapBehavior: "LimitedSwap"
+            featureGates:
+              NodeSwap: true
   hosts:
   - role: controller+worker
     os: debian
@@ -28,15 +28,21 @@ spec:
       address: pi31.local
       user: commojun
       keyPath: ~/.ssh/id_rsa
+    installFlags:
+      - --profile swap-enable
   - role: worker
     os: debian
     ssh:
       address: pi32.local
       user: commojun
       keyPath: ~/.ssh/id_rsa
+    installFlags:
+      - --profile swap-enable
   - role: worker
     os: debian
     ssh:
       address: pi33.local
       user: commojun
       keyPath: ~/.ssh/id_rsa
+    installFlags:
+      - --profile swap-enable
