@@ -6,43 +6,28 @@ spec:
   k0s:
     version: v1.26.1+k0s.0
     dynamicConfig: true
-    config:
-      apiVersion: k0s.k0sproject.io/v1beta1
-      kind: ClusterConfig
-      spec:
-        workerProfiles:
-        - name: swap-enable
-          values:
-            featureGates:
-              NodeSwap: true
   hosts:
   - role: controller+worker
     os: debian
     ssh:
-      address: pi41.local
+      address: 192.168.10.41
       user: commojun
       keyPath: ~/.ssh/id_rsa
   - role: worker
     os: debian
     ssh:
-      address: pi31.local
+      address: 192.168.10.31
       user: commojun
       keyPath: ~/.ssh/id_rsa
-    installFlags:
-      - --profile swap-enable
   - role: worker
     os: debian
     ssh:
-      address: pi32.local
+      address: 192.168.10.32
       user: commojun
       keyPath: ~/.ssh/id_rsa
-    installFlags:
-      - --profile swap-enable
   - role: worker
     os: debian
     ssh:
-      address: pi33.local
+      address: 192.168.10.33
       user: commojun
       keyPath: ~/.ssh/id_rsa
-    installFlags:
-      - --profile swap-enable
