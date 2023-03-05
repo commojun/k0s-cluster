@@ -37,7 +37,6 @@ https://qiita.com/nykym/items/dcc572c21885543d94c8
 - cgroupを有効にする ([参考](https://zenn.dev/link/comments/18ff5c881781be))
 - microsdで動いているノードはswapを無効にしておく ([参考](https://letraspberry.hatenablog.com/entry/2021/02/12/233725#2-swap%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96))
 - コンテナを多く扱えるよう、あえてswapを増やした[参考](https://a244.hateblo.jp/entry/2016/12/12/010429)
-- https://docs.k0sproject.io/v1.26.2+k0s.0/raspberry-pi4/#optional-create-a-swap-file k0sでswapを扱うためにはこの手順じゃないとだめか？
 
 ### 4, 適用
 
