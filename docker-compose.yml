@@ -3,7 +3,8 @@ version: "3"
 services:
   mysql:
     image: mysql:8.0
-    volumes: /home/commojun/k0smysql:/var/mysql
+    volumes:
+      - /home/commojun/k0smysql:/var/mysql
     environment:
       MYSQL_ROOT_PASSWORD: k0smysqlroot!
       TZ: "Asia/Tokyo"
