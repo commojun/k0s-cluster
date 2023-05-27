@@ -6,6 +6,14 @@ spec:
   k0s:
     version: v1.26.1+k0s.0
     dynamicConfig: true
+    config:
+      apiVersion: k0s.k0sproject.io/v1beta1
+      kind: ClusterConfig
+      spec:
+        storage:
+          type: kine
+          kine:
+            dataSource: mysql://root:k0smysqlroot!@tcp(192.168.10.41)/kine
   hosts:
   - role: controller+worker
     noTaints: true
